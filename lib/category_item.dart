@@ -7,9 +7,12 @@ class CategoryItem extends StatelessWidget {
   CategoryItem(this._category);
 
   void moveToMealsScreen(BuildContext ctx){
-    Navigator.of(ctx).push(MaterialPageRoute(
-      builder: (_) => MealsScreen()
-    ));
+//    Navigator.of(ctx).push(MaterialPageRoute(
+//      builder: (_) => MealsScreen(_category)
+//    ));  //use this if route is not specified in materialapp widget
+   Navigator.of(ctx).pushNamed(
+       MealsScreen.routeName,
+       arguments:  this._category);
   }
   @override
   Widget build(BuildContext context) {

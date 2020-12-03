@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mealsapp/categories_home_screen.dart';
+import './categories_home_screen.dart';
+import './meals_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,6 +29,10 @@ class MyApp extends StatelessWidget {
         )
       ),
       home: CategoriesHomeScreen(),
+      routes: {
+         /* '/' : (ctx) => CategoriesHomeScreen()  // we then don't need 'home' */
+        MealsScreen.routeName : (ctx) => MealsScreen(),
+      },
     );
   }
 }
