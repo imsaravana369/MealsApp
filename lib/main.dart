@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import './categories_home_screen.dart';
-import './meals_screen.dart';
+import 'package:mealsapp/screens/filters_screen.dart';
+import 'package:mealsapp/screens/meals_info_screen.dart';
+import 'package:mealsapp/screens/tabs_screen.dart';
+import 'screens/categories_home_screen.dart';
+import 'screens/meals_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,11 +19,15 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.amber,
         canvasColor: Color.fromRGBO(255, 254 ,229, 1),
         textTheme: ThemeData.light().textTheme.copyWith(
+
           bodyText1: TextStyle(
-            color: Color.fromRGBO(20, 51, 51, 1)
+              fontFamily: 'Raleway',
+              color: Color.fromRGBO(20, 51, 51, 1)
           ),
             bodyText2: TextStyle(
-            color: Color.fromRGBO(20, 51, 51, 1)
+                fontFamily: 'Raleway',
+                fontStyle: FontStyle.italic,
+                color: Color.fromRGBO(20, 51, 51, 1)
         ),
           headline6: TextStyle(
             fontFamily: 'RobotoCondensed',
@@ -28,10 +35,11 @@ class MyApp extends StatelessWidget {
           )
         )
       ),
-      home: CategoriesHomeScreen(),
       routes: {
-         /* '/' : (ctx) => CategoriesHomeScreen()  // we then don't need 'home' */
+        Navigator.defaultRouteName : (ctx) => TabsScreen(),
         MealsScreen.routeName : (ctx) => MealsScreen(),
+        MealsInfoScreen.routeName : (ctx) => MealsInfoScreen(),
+        FiltersScreen.routeName : (ctx) => FiltersScreen(),
       },
     );
   }

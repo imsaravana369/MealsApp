@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mealsapp/meals_screen.dart';
+import 'file:///C:/Users/Saravana/AndroidStudioProjects/meals_app/lib/screens/meals_screen.dart';
 import 'package:mealsapp/models/category.dart';
 
 class CategoryItem extends StatelessWidget {
@@ -19,7 +19,7 @@ class CategoryItem extends StatelessWidget {
     return InkWell(
       onTap: () => moveToMealsScreen(context),
       splashColor: Theme.of(context).primaryColor,
-        borderRadius: BorderRadius.circular(15), //set same borderRadius as that of parent
+        borderRadius: BorderRadius.circular(15), //set same borderRadius as that of parent, otherwise splashing effect is abnormal
         child:Container(
       padding: const EdgeInsets.all(15),
       child:
